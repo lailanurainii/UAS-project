@@ -1,0 +1,77 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+int main()
+{
+    int angka;
+    int tebakan;
+    char lagi;
+
+    cout << "\t\t\t\t\tSelamat datang di Permainan Tebak Angka!" << endl;
+    cout << endl;
+
+    do
+    {
+        cout << "\t\t\t\t\tMasukkan angka antara 1-100\n";
+        cout << endl;
+        srand(time(NULL)); //membuat random
+        tebakan = rand() % 100 + 1; //mengacak angka antara 1 sampai 100
+
+        do
+        {
+            cout << "\t\t\t\t\tMasukkan angka : ";
+            cin >> angka;
+
+            if (angka < tebakan)
+            {
+                cout << "\t\t\t\t\tAngka masih kurang besar! Coba lagi.." << endl;
+                cout << endl;
+            }
+            else if (angka > tebakan)
+            {
+                cout << "\t\t\t\t\tAngka masih kurang kecil! Coba Lagi.." << endl;
+                cout << endl;
+            }
+            else
+            {
+                int box[3][3] =
+                {
+                    {218,196,191},{179},{192,196,217}
+                };
+
+                int x, y;
+                cout << "\t\t\t\t\t" << char(box[0][0]); //lurus atas
+
+                for (x = 0; x < 40; x++)
+                    cout << char(box[0][1]);
+                cout << char(box[0][2]);
+                cout << endl;
+
+                for (y = 0; y < 1; y++)
+                {
+                    cout << "\t\t\t\t\t" << char(box[1][0]);
+                    cout << "Selamat! Anda berhasil menebak angka " << tebakan << " " << char(box[1][0]);
+                   
+                    cout << endl;
+                }
+
+                cout << "\t\t\t\t\t" << char(box[2][0]); //lurus bawah
+                for (x = 0; x < 40; x++)
+                    cout << char(box[2][1]);
+                cout << char(box[2][2]);
+                cout << endl;
+            }
+
+        } while (angka != tebakan);
+
+        cout << "\t\t\t\t\tApakah mau main lagi? y/t \n";
+        cout << "\t\t\t\t\t";  cin >> lagi;
+        cout << endl;
+
+    } while (lagi == 'y');
+
+    return 0;
+
+}
