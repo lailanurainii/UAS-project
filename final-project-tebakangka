@@ -16,8 +16,8 @@ int main()
     {
         cout << "\t\t\t\t\tMasukkan angka antara 1-100\n";
         cout << endl;
-        srand(time(NULL)); //membuat random
-        tebakan = rand() % 100 + 1; //mengacak angka antara 1 sampai 100
+        srand(time(NULL)); 
+        tebakan = rand() % 100 + 1; 
 
         do
         {
@@ -42,7 +42,7 @@ int main()
                 };
 
                 int x, y;
-                cout << "\t\t\t\t\t" << char(box[0][0]); //lurus atas
+                cout << "\t\t\t\t\t" << char(box[0][0]); 
 
                 for (x = 0; x < 40; x++)
                     cout << char(box[0][1]);
@@ -57,7 +57,7 @@ int main()
                     cout << endl;
                 }
 
-                cout << "\t\t\t\t\t" << char(box[2][0]); //lurus bawah
+                cout << "\t\t\t\t\t" << char(box[2][0]);
                 for (x = 0; x < 40; x++)
                     cout << char(box[2][1]);
                 cout << char(box[2][2]);
